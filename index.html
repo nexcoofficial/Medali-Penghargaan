@@ -3,632 +3,1172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medali Penghargaan Kemerdekaan RI ke-80 | Rayakan Semangat Juang</title>
+    <title>Medali Penghargaan HUT RI ke-80 | Hadiah Bergengsi untuk Lomba Agustusan</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'merah-nasional': '#C60C30',
-                        'emas-nasional': '#D4AF37',
-                    },
-                    fontFamily: {
-                        'poppins': ['Poppins', 'sans-serif'],
-                        'inter': ['Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-gold': 'pulse-gold 2s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        },
-                        'pulse-gold': {
-                            '0%, 100%': { 'box-shadow': '0 0 0 0 rgba(212, 175, 55, 0.7)' },
-                            '50%': { 'box-shadow': '0 0 0 20px rgba(212, 175, 55, 0)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter:wght@500&display=swap" rel="stylesheet">
     <style>
-        .wave-bg {
-            background: linear-gradient(180deg, #C60C30 0%, #FFFFFF 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+        :root {
+            --bg-dark: #0C0C0C;
+            --red-accent: #E50914;
+            --gold-accent: #FFD700;
+            --text-white: #FFFFFF;
+            --text-gray: #CCCCCC;
         }
         
-        .medal-shadow {
-            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.3));
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            overflow-x: hidden;
         }
         
-        .feature-card {
-            transition: all 0.3s ease;
+        .title-font {
+            font-family: 'Poppins', sans-serif;
         }
         
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        .hero-section {
+            background: linear-gradient(rgba(12, 12, 12, 0.7), rgba(12, 12, 12, 0.9)), 
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path fill="%23E50914" d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08L1200,0v120H0Z" opacity=".25"></path><path fill="%23FFFFFF" d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5"></path><path fill="%23E50914" d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            animation: waveAnimation 15s ease-in-out infinite alternate;
         }
         
-        .testimonial-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(245, 245, 245, 0.9) 100%);
-            backdrop-filter: blur(10px);
+        @keyframes waveAnimation {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
         }
         
-        .countdown-box {
-            background: linear-gradient(135deg, #C60C30 0%, #8A0A24 100%);
-            box-shadow: 0 10px 20px rgba(198, 12, 48, 0.3);
+        .glow-effect {
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+            transition: box-shadow 0.3s ease;
         }
         
-        .price-card {
-            background: linear-gradient(135deg, #FFFFFF 0%, #F8F8F8 100%);
-            border: 2px solid #D4AF37;
+        .glow-effect:hover {
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.8);
         }
         
-        .color-variant {
-            transition: all 0.3s ease;
+        .red-glow {
+            box-shadow: 0 0 15px rgba(229, 9, 20, 0.5);
         }
         
-        .color-variant:hover {
-            transform: scale(1.05);
+        .red-glow:hover {
+            box-shadow: 0 0 25px rgba(229, 9, 20, 0.8);
         }
         
-        .color-variant.active {
-            border: 3px solid #D4AF37;
-            transform: scale(1.1);
+        .price-strike {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .price-strike::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--red-accent);
+            animation: strike 0.5s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+        
+        @keyframes strike {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+        
+        .flip-countdown {
+            perspective: 1000px;
+        }
+        
+        .flip-card {
+            position: relative;
+            width: 60px;
+            height: 80px;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        
+        .flip-card.flip {
+            transform: rotateX(180deg);
+        }
+        
+        .flip-front, .flip-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            border-radius: 8px;
+            background: rgba(229, 9, 20, 0.2);
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .flip-back {
+            transform: rotateX(180deg);
+        }
+        
+        .carousel {
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
         }
         
         .carousel-item {
-            transition: transform 0.5s ease, opacity 0.5s ease;
+            scroll-snap-align: start;
         }
         
-        .carousel-item:not(.active) {
-            opacity: 0.5;
-            transform: scale(0.9);
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 0.8s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .zoom-in {
+            animation: zoomIn 0.8s ease-out;
+        }
+        
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0;
+        }
+        
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        .sticky-countdown {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .sticky-countdown.show {
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                background-size: 180%;
+            }
+            
+            .flip-card {
+                width: 40px;
+                height: 60px;
+            }
         }
     </style>
 </head>
-<body class="font-inter bg-gray-50">
-    <!-- Hero Section -->
-    <section class="wave-bg min-h-screen relative overflow-hidden">
-        <div class="absolute inset-0">
-            <div class="absolute top-10 left-10 w-16 h-16 bg-white opacity-20 rounded-full"></div>
-            <div class="absolute top-1/4 right-20 w-24 h-24 bg-amber-200 opacity-20 rounded-full"></div>
-            <div class="absolute bottom-1/3 left-1/4 w-32 h-32 bg-red-300 opacity-20 rounded-full"></div>
-            <div class="absolute bottom-20 right-1/3 w-20 h-20 bg-white opacity-20 rounded-full"></div>
+<body class="antialiased">
+    <!-- Confetti Container -->
+    <div id="confetti-container"></div>
+    
+    <!-- Sticky Countdown (Mobile) -->
+    <div id="sticky-countdown" class="sticky-countdown bg-red-600 py-3 px-4 flex justify-between items-center">
+        <div class="text-white font-bold">
+            <span class="text-sm">Promo berakhir dalam:</span>
         </div>
-        
-        <!-- Bendera kecil animasi -->
-        <div class="absolute top-20 left-10 animate-bounce">
-            <div class="w-8 h-5 bg-red-600"></div>
-            <div class="w-8 h-5 bg-white"></div>
+        <div class="flex space-x-1" id="mobile-countdown">
+            <!-- Filled by JavaScript -->
         </div>
-        
-        <div class="absolute bottom-40 right-20 animate-bounce" style="animation-delay: 0.3s;">
-            <div class="w-8 h-5 bg-white"></div>
-            <div class="w-8 h-5 bg-red-600"></div>
-        </div>
-        
-        <div class="container mx-auto px-4 py-16 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center">
-                <div class="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
-                    <h1 class="text-4xl md:text-6xl font-poppins font-bold text-white mb-6">
-                        Rayakan Semangat Juang, <br>
-                        <span class="text-amber-300">Beri Apresiasi Terbaik!</span> 
-                        <span class="text-3xl">🇮🇩</span>
-                    </h1>
-                    <p class="text-xl text-white mb-8 max-w-2xl">
-                        Medali Penghargaan Eksklusif untuk Pemenang Lomba Agustusan 2025. 
-                        Desain Nasionalis Premium dengan Sentuhan Kemerdekaan ke-80.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#order" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg transform transition duration-300 hover:scale-105">
-                            PESAN SEKARANG
-                        </a>
-                        <div class="bg-white bg-opacity-20 border-2 border-white border-opacity-30 text-white font-bold py-4 px-8 rounded-full text-lg">
-                            <span class="line-through opacity-70">Rp225.000</span>
-                            <span class="text-amber-300 ml-2">Rp150.000</span>
-                        </div>
+        <a href="#order" class="bg-white text-red-600 px-3 py-1 rounded font-bold text-sm">PESAN</a>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="bg-black bg-opacity-80 backdrop-filter backdrop-blur-sm fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img class="h-8 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg" alt="Logo">
+                        <span class="ml-2 title-font text-white">MedaliRI80</span>
                     </div>
                 </div>
-                <div class="lg:w-1/2 flex justify-center">
-                    <div class="relative">
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/71ygQPYQ0iL._UL1200_.jpg" 
-                             alt="Medali Penghargaan Kemerdekaan" 
-                             class="w-80 h-80 object-contain medal-shadow animate-float">
-                        <div class="absolute -top-10 -left-10 w-32 h-32 rounded-full bg-amber-200 bg-opacity-20 animate-pulse-gold"></div>
-                        <div class="absolute -bottom-10 -right-10 w-24 h-24 rounded-full bg-red-300 bg-opacity-20 animate-ping"></div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-4">
+                        <a href="#features" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Fitur</a>
+                        <a href="#gallery" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Galeri</a>
+                        <a href="#order" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium glow-effect">Pesan Sekarang</a>
                     </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
         
-        <div class="absolute bottom-0 w-full">
-            <svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                <path d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z" fill="#f8fafc" opacity=".8"></path>
-                <path d="M0 0v15.81c13 21.11 27.64 41.05 47.69 56.24C99.41 111.27 165 111 224.58 91.58c31.15-10.15 60.09-26.07 89.67-39.8 40.92-19 84.73-46 130.83-49.67 36.26-2.85 70.9 9.42 98.6 31.56 31.77 25.39 62.32 62 103.63 73 40.44 10.79 81.35-6.69 119.13-24.28s75.16-39 116.92-43.05c59.73-5.85 113.28 22.88 168.9 38.84 30.2 8.66 59 6.17 87.09-7.5 22.43-10.89 48-26.93 60.65-49.24V0z" fill="#f8fafc"></path>
-            </svg>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black bg-opacity-90">
+                <a href="#features" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Fitur</a>
+                <a href="#gallery" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Galeri</a>
+                <a href="#order" class="bg-red-600 hover:bg-red-700 text-white block px-3 py-2 rounded-md text-base font-medium text-center">Pesan Sekarang</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero-section pt-24 pb-16 md:pt-32 md:pb-24 relative overflow-hidden fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                <div class="mb-12 lg:mb-0 slide-in-left">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold title-font mb-6">
+                        <span class="text-white">Medali Penghargaan</span><br>
+                        <span class="text-red-500">HUT RI ke-80</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-300 mb-8">
+                        Rayakan Semangat Juang, Beri Apresiasi Terbaik! 🇮🇩<br>
+                        Medali bergengsi untuk semua jenis lomba Agustusan.
+                    </p>
+                    <div class="mb-8">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl md:text-4xl font-bold text-gold-500" style="color: var(--gold-accent);">Rp150.000</span>
+                            <span class="price-strike ml-4 text-xl text-gray-400">Rp225.000</span>
+                        </div>
+                        <div class="flex items-center text-yellow-300 mb-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="ml-2 text-white">4.8 (120+ ulasan)</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#order" class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg text-center transition duration-300 transform hover:scale-105 red-glow">
+                            PESAN SEKARANG <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#gallery" class="border border-gray-600 hover:border-gray-400 text-white px-8 py-4 rounded-lg font-bold text-lg text-center transition duration-300 hover:bg-gray-900">
+                            LIHAT GALERI <i class="fas fa-images ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="relative slide-in-right">
+                    <div class="relative max-w-md mx-auto">
+                        <div class="absolute -inset-4 bg-red-600 rounded-xl opacity-20 blur-lg"></div>
+                        <img src="https://images-na.ssl-images-amazon.com/images/I/7102NiC3PuL._UL1200_.jpg" 
+                             alt="Medali Penghargaan HUT RI" 
+                             class="relative rounded-xl transform transition duration-500 hover:scale-105">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-
-    <!-- Deskripsi Produk -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-poppins font-bold text-gray-800 mb-6">
-                    Medali Penghargaan Eksklusif Kemerdekaan ke-80
+    
+    <!-- Countdown Section -->
+    <section class="py-6 bg-red-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
+                <h2 class="text-xl font-bold text-white">
+                    PROMO SPESIAL HUT RI ke-80 - Berakhir dalam:
                 </h2>
-                <p class="text-lg text-gray-600">
-                    Medali penghargaan eksklusif untuk para juara lomba Agustusan. Terbuat dari bahan paduan seng premium, dilengkapi pita merah-putih-biru dan desain nasionalis. Cocok untuk lomba RT/RW, sekolah, instansi, maupun kompetisi anak-anak dan dewasa.
+                <div class="flex items-center gap-1 font-mono text-white">
+                    <span class="bg-black bg-opacity-30 px-2 py-1 rounded" id="countdown-days">03</span>
+                    <span>Hari</span>
+                    <span class="bg-black bg-opacity-30 px-2 py-1 rounded" id="countdown-hours">00</span>
+                    <span>Jam</span>
+                    <span class="bg-black bg-opacity-30 px-2 py-1 rounded" id="countdown-minutes">00</span>
+                    <span>Menit</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-900 zoom-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold title-font text-white mb-4">
+                    <span class="text-red-500">Keunggulan</span> Medali Kami
+                </h2>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                    Medali berkualitas tinggi dengan desain nasionalis yang sempurna untuk memeriahkan HUT RI ke-80
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-                <div class="feature-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-medal text-3xl text-amber-500"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-red-600 bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-flag text-red-500 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-center mb-4">Bahan Premium</h3>
-                    <p class="text-gray-600 text-center">
-                        Terbuat dari paduan seng berkualitas tinggi dengan lapisan emas, perak, atau perunggu yang tahan lama.
-                    </p>
+                    <h3 class="text-xl font-bold text-white mb-2">Desain Nasionalis</h3>
+                    <p class="text-gray-400">Kombinasi warna merah putih dengan simbol Garuda Pancasila, mencerminkan semangat kebangsaan.</p>
                 </div>
                 
-                <div class="feature-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-ribbon text-3xl text-amber-500"></i>
+                <!-- Feature 2 -->
+                <div class="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-yellow-500 bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-yellow-400 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-center mb-4">Tali Kalung Nyaman</h3>
-                    <p class="text-gray-600 text-center">
-                        Dilengkapi tali kalung premium yang nyaman dipakai dan mudah disesuaikan untuk segala usia.
-                    </p>
+                    <h3 class="text-xl font-bold text-white mb-2">Paduan Seng Berkualitas</h3>
+                    <p class="text-gray-400">Bahan paduan seng premium, bukan plastik murahan, memberikan kesan mewah dan tahan lama.</p>
                 </div>
                 
-                <div class="feature-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-star text-3xl text-amber-500"></i>
+                <!-- Feature 3 -->
+                <div class="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-blue-500 bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-ribbon text-blue-400 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-center mb-4">Desain Nasionalis</h3>
-                    <p class="text-gray-600 text-center">
-                        Desain eksklusif dengan motif merah putih dan simbol-simbol kemerdekaan yang elegan.
-                    </p>
+                    <h3 class="text-xl font-bold text-white mb-2">Tali Kalung Nyaman</h3>
+                    <p class="text-gray-400">Tali kalung dari bahan berkualitas dengan warna merah putih biru, nyaman dipakai dan elegan.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-green-500 bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-box-open text-green-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Siap Dibagikan</h3>
+                    <p class="text-gray-400">Dikemas dalam kotak eksklusif, praktis dan siap dibagikan kepada para pemenang lomba.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-purple-500 bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-trophy text-purple-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Cocok untuk Semua Lomba</h3>
+                    <p class="text-gray-400">Sempurna untuk lomba tingkat RT, RW, sekolah, instansi, atau acara komunitas.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-red-500 bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-medal text-red-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Ukuran Ideal</h3>
+                    <p class="text-gray-400">Diameter 5 cm dengan tali 40 cm, ukuran ideal untuk medali penghargaan.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Galeri Produk -->
-    <section class="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center text-gray-800 mb-16">
-                Galeri Medali Penghargaan
-            </h2>
+    
+    <!-- Suitable Competitions -->
+    <section class="py-16 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold title-font text-white mb-4">
+                    Lomba yang <span class="text-red-500">Cocok</span>
+                </h2>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                    Medali kami sempurna untuk berbagai jenis lomba Agustusan
+                </p>
+            </div>
             
-            <div class="relative max-w-4xl mx-auto">
-                <div class="carousel-container overflow-hidden rounded-3xl shadow-2xl">
-                    <div class="carousel-track flex transition-transform duration-500">
-                        <div class="carousel-item w-full flex-shrink-0">
-                            <img src="https://remove.photos/cache/images/users/b8c90506-c5df-4ed8-be26-f42657d7624d/recommend-optimized.png" 
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Competition 1 -->
+                <div class="bg-gray-900 rounded-lg p-4 text-center hover:bg-gray-800 transition duration-300 transform hover:scale-105">
+                    <div class="w-16 h-16 bg-red-600 bg-opacity-20 rounded-full flex items-center justify-center mb-3 mx-auto glow-effect">
+                        <i class="fas fa-running text-red-500 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-white">Balap Karung</h3>
+                </div>
+                
+                <!-- Competition 2 -->
+                <div class="bg-gray-900 rounded-lg p-4 text-center hover:bg-gray-800 transition duration-300 transform hover:scale-105">
+                    <div class="w-16 h-16 bg-yellow-500 bg-opacity-20 rounded-full flex items-center justify-center mb-3 mx-auto glow-effect">
+                        <i class="fas fa-rope text-yellow-400 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-white">Tarik Tambang</h3>
+                </div>
+                
+                <!-- Competition 3 -->
+                <div class="bg-gray-900 rounded-lg p-4 text-center hover:bg-gray-800 transition duration-300 transform hover:scale-105">
+                    <div class="w-16 h-16 bg-blue-500 bg-opacity-20 rounded-full flex items-center justify-center mb-3 mx-auto glow-effect">
+                        <i class="fas fa-tshirt text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-white">Fashion Show</h3>
+                </div>
+                
+                <!-- Competition 4 -->
+                <div class="bg-gray-900 rounded-lg p-4 text-center hover:bg-gray-800 transition duration-300 transform hover:scale-105">
+                    <div class="w-16 h-16 bg-green-500 bg-opacity-20 rounded-full flex items-center justify-center mb-3 mx-auto glow-effect">
+                        <i class="fas fa-brain text-green-400 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-white">Cerdas Cermat</h3>
+                </div>
+                
+                <!-- Competition 5 -->
+                <div class="bg-gray-900 rounded-lg p-4 text-center hover:bg-gray-800 transition duration-300 transform hover:scale-105">
+                    <div class="w-16 h-16 bg-purple-500 bg-opacity-20 rounded-full flex items-center justify-center mb-3 mx-auto glow-effect">
+                        <i class="fas fa-child text-purple-400 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-white">Lomba Anak-anak</h3>
+                </div>
+                
+                <!-- Competition 6 -->
+                <div class="bg-gray-900 rounded-lg p-4 text-center hover:bg-gray-800 transition duration-300 transform hover:scale-105">
+                    <div class="w-16 h-16 bg-pink-500 bg-opacity-20 rounded-full flex items-center justify-center mb-3 mx-auto glow-effect">
+                        <i class="fas fa-walking text-pink-400 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-white">Jalan Santai</h3>
+                </div>
+                
+                <!-- Competition 7 -->
+                <div class="bg-gray-900 rounded-lg p-4 text-center hover:bg-gray-800 transition duration-300 transform hover:scale-105">
+                    <div class="w-16 h-16 bg-orange-500 bg-opacity-20 rounded-full flex items-center justify-center mb-3 mx-auto glow-effect">
+                        <i class="fas fa-utensils text-orange-400 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-white">Lomba Memasak</h3>
+                </div>
+                
+                <!-- Competition 8 -->
+                <div class="bg-gray-900 rounded-lg p-4 text-center hover:bg-gray-800 transition duration-300 transform hover:scale-105">
+                    <div class="w-16 h-16 bg-teal-500 bg-opacity-20 rounded-full flex items-center justify-center mb-3 mx-auto glow-effect">
+                        <i class="fas fa-users text-teal-400 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-white">Lomba Ibu-Ibu</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold title-font text-white mb-4">
+                    <span class="text-red-500">Galeri</span> Produk
+                </h2>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                    Lihat detail medali penghargaan HUT RI ke-80 kami
+                </p>
+            </div>
+            
+            <!-- Main Carousel -->
+            <div class="relative mb-12">
+                <div class="carousel flex overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4" id="main-carousel">
+                    <div class="carousel-item flex-shrink-0 w-full md:w-2/3 lg:w-1/2 px-2">
+                        <div class="relative rounded-xl overflow-hidden">
+                            <img src="https://images-na.ssl-images-amazon.com/images/I/71ygQPYQ0iL._UL1200_.jpg" 
                                  alt="Medali Emas" 
-                                 class="w-full h-96 object-contain bg-white">
+                                 class="w-full h-auto object-contain rounded-xl transform transition duration-500 hover:scale-105">
                         </div>
-                        <div class="carousel-item w-full flex-shrink-0">
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-full md:w-2/3 lg:w-1/2 px-2">
+                        <div class="relative rounded-xl overflow-hidden">
                             <img src="https://images-na.ssl-images-amazon.com/images/I/7102NiC3PuL._UL1200_.jpg" 
-                                 alt="Medali Emas" 
-                                 class="w-full h-96 object-contain bg-white">
+                                 alt="Medali Silver" 
+                                 class="w-full h-auto object-contain rounded-xl transform transition duration-500 hover:scale-105">
                         </div>
-                        <div class="carousel-item w-full flex-shrink-0">
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-full md:w-2/3 lg:w-1/2 px-2">
+                        <div class="relative rounded-xl overflow-hidden">
                             <img src="https://images-na.ssl-images-amazon.com/images/I/61l3nRsSScL._UL1200_.jpg" 
-                                 alt="Medali Perak" 
-                                 class="w-full h-96 object-contain bg-white">
-                        </div>
-                        <div class="carousel-item w-full flex-shrink-0">
-                            <img src="https://images-na.ssl-images-amazon.com/images/I/71Gx6B2WZKL._UL1200_.jpg" 
                                  alt="Medali Perunggu" 
-                                 class="w-full h-96 object-contain bg-white">
+                                 class="w-full h-auto object-contain rounded-xl transform transition duration-500 hover:scale-105">
                         </div>
-                        <div class="carousel-item w-full flex-shrink-0">
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-full md:w-2/3 lg:w-1/2 px-2">
+                        <div class="relative rounded-xl overflow-hidden">
+                            <img src="https://images-na.ssl-images-amazon.com/images/I/71Gx6B2WZKL._UL1200_.jpg" 
+                                 alt="Medali Box" 
+                                 class="w-full h-auto object-contain rounded-xl transform transition duration-500 hover:scale-105">
+                        </div>
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-full md:w-2/3 lg:w-1/2 px-2">
+                        <div class="relative rounded-xl overflow-hidden">
                             <img src="https://m.media-amazon.com/images/I/71GDfm8Jy2L._AC_SX679_.jpg" 
-                                 alt="Medali Emas Detail" 
-                                 class="w-full h-96 object-contain bg-white">
+                                 alt="Medali Tampak Depan" 
+                                 class="w-full h-auto object-contain rounded-xl transform transition duration-500 hover:scale-105">
                         </div>
-                        <div class="carousel-item w-full flex-shrink-0">
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-full md:w-2/3 lg:w-1/2 px-2">
+                        <div class="relative rounded-xl overflow-hidden">
+                            <img src="https://m.media-amazon.com/images/I/71GDfm8Jy2L._AC_SX679_.jpg" 
+                                 alt="Medali Tampak Samping" 
+                                 class="w-full h-auto object-contain rounded-xl transform transition duration-500 hover:scale-105">
+                        </div>
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-full md:w-2/3 lg:w-1/2 px-2">
+                        <div class="relative rounded-xl overflow-hidden">
                             <img src="https://m.media-amazon.com/images/I/71tJysfpqxL._AC_SX679_.jpg" 
-                                 alt="Medali Perak Detail" 
-                                 class="w-full h-96 object-contain bg-white">
+                                 alt="Medali dengan Kotak" 
+                                 class="w-full h-auto object-contain rounded-xl transform transition duration-500 hover:scale-105">
                         </div>
-                        <div class="carousel-item w-full flex-shrink-0">
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-full md:w-2/3 lg:w-1/2 px-2">
+                        <div class="relative rounded-xl overflow-hidden">
                             <img src="https://m.media-amazon.com/images/I/71A2LXKqk9L._AC_SX679_.jpg" 
-                                 alt="Medali Perunggu Detail" 
-                                 class="w-full h-96 object-contain bg-white">
-                        </div>
-                        <div class="carousel-item w-full flex-shrink-0">
-                            <img src="https://m.media-amazon.com/images/I/81iRv3etklL._AC_SX679_.jpg" 
-                                 alt="Medali Emas Tampak Depan" 
-                                 class="w-full h-96 object-contain bg-white">
-                        </div>
-                        <div class="carousel-item w-full flex-shrink-0">
-                            <img src="https://m.media-amazon.com/images/I/71h-3wJw5uL._AC_SX679_.jpg" 
-                                 alt="Medali Perak Tampak Depan" 
-                                 class="w-full h-96 object-contain bg-white">
+                                 alt="Medali Detail" 
+                                 class="w-full h-auto object-contain rounded-xl transform transition duration-500 hover:scale-105">
                         </div>
                     </div>
                 </div>
                 
-                <button class="carousel-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-100 text-gray-800 w-12 h-12 rounded-full shadow-lg">
+                <button class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 focus:outline-none" id="prev-btn">
                     <i class="fas fa-chevron-left"></i>
                 </button>
-                <button class="carousel-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-100 text-gray-800 w-12 h-12 rounded-full shadow-lg">
+                <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 focus:outline-none" id="next-btn">
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
             
-            <div class="flex justify-center mt-8 space-x-2">
-                <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300"></button>
-                <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300"></button>
-                <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300"></button>
-                <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300"></button>
-                <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300"></button>
-                <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300"></button>
-                <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300"></button>
-                <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300"></button>
-                <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300"></button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Varian Warna -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center text-gray-800 mb-16">
-                Pilihan Warna Medali
-            </h2>
-            
-            <div class="flex flex-col md:flex-row justify-center gap-8">
-                <div class="color-variant active bg-white rounded-2xl p-6 shadow-lg border-2 border-amber-500">
-                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rasf-m1oepluk54fld2@resize_w450_nl.webp" 
-                         alt="Medali Emas" 
-                         class="w-48 h-48 object-contain mx-auto">
-                    <h3 class="text-xl font-bold text-center mt-4">Medali Emas</h3>
-                    <p class="text-gray-600 text-center">Juara 1</p>
-                </div>
-                
-                <div class="color-variant bg-white rounded-2xl p-6 shadow-lg border-2 border-transparent">
-                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rasa-m1oepluk6j015d@resize_w450_nl.webp" 
-                         alt="Medali Perak" 
-                         class="w-48 h-48 object-contain mx-auto">
-                    <h3 class="text-xl font-bold text-center mt-4">Medali Perak</h3>
-                    <p class="text-gray-600 text-center">Juara 2</p>
-                </div>
-                
-                <div class="color-variant bg-white rounded-2xl p-6 shadow-lg border-2 border-transparent">
-                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7ras9-m1oepluk7xkhac@resize_w450_nl.webp" 
-                         alt="Medali Perunggu" 
-                         class="w-48 h-48 object-contain mx-auto">
-                    <h3 class="text-xl font-bold text-center mt-4">Medali Perunggu</h3>
-                    <p class="text-gray-600 text-center">Juara 3</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lomba Cocok -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center text-gray-800 mb-6">
-                Cocok Untuk Segala Jenis Lomba
-            </h2>
-            <p class="text-lg text-center text-gray-600 mb-16 max-w-2xl mx-auto">
-                Medali penghargaan ini sempurna untuk berbagai jenis lomba Agustusan yang meningkatkan semangat kebersamaan dan nasionalisme.
-            </p>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="bg-white rounded-2xl p-6 text-center shadow-md">
-                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <i class="fas fa-sack text-2xl text-amber-500"></i>
-                    </div>
-                    <h3 class="text-lg font-bold">Balap Karung</h3>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-6 text-center shadow-md">
-                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <i class="fas fa-rope text-2xl text-amber-500"></i>
-                    </div>
-                    <h3 class="text-lg font-bold">Tarik Tambang</h3>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-6 text-center shadow-md">
-                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <i class="fas fa-brain text-2xl text-amber-500"></i>
-                    </div>
-                    <h3 class="text-lg font-bold">Cerdas Cermat</h3>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-6 text-center shadow-md">
-                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <i class="fas fa-egg text-2xl text-amber-500"></i>
-                    </div>
-                    <h3 class="text-lg font-bold">Makan Kerupuk</h3>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-6 text-center shadow-md">
-                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <i class="fas fa-running text-2xl text-amber-500"></i>
-                    </div>
-                    <h3 class="text-lg font-bold">Lari Estafet</h3>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-6 text-center shadow-md">
-                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <i class="fas fa-puzzle-piece text-2xl text-amber-500"></i>
-                    </div>
-                    <h3 class="text-lg font-bold">Puzzle Kemerdekaan</h3>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-6 text-center shadow-md">
-                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <i class="fas fa-paint-brush text-2xl text-amber-500"></i>
-                    </div>
-                    <h3 class="text-lg font-bold">Lomba Mewarnai</h3>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-6 text-center shadow-md">
-                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <i class="fas fa-music text-2xl text-amber-500"></i>
-                    </div>
-                    <h3 class="text-lg font-bold">Lomba Nyanyi</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Countdown & Harga -->
-    <section class="py-20 bg-gradient-to-b from-white to-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden">
-                <div class="md:flex">
-                    <div class="countdown-box md:w-2/5 p-8 text-white flex flex-col justify-center">
-                        <h3 class="text-xl font-bold mb-4">PENAWARAN TERBATAS!</h3>
-                        <h2 class="text-3xl font-poppins font-bold mb-6">Flash Sale Kemerdekaan</h2>
-                        <div id="countdown" class="grid grid-cols-4 gap-2 mb-6">
-                            <div class="bg-white bg-opacity-20 rounded-lg p-2 text-center">
-                                <div class="text-2xl font-bold" id="days">07</div>
-                                <div class="text-sm">Hari</div>
+            <!-- Variants -->
+            <div class="text-center mb-8">
+                <h3 class="text-xl font-bold text-white mb-4">Pilihan Warna Medali</h3>
+                <div class="flex justify-center space-x-6">
+                    <!-- Gold -->
+                    <div class="text-center">
+                        <button onclick="showLargeImage('https://down-id.img.susercontent.com/file/id-11134207-7rasf-m1oepluk54fld2@resize_w450_nl.webp')" class="cursor-pointer">
+                            <div class="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-yellow-400 glow-effect mx-auto mb-2">
+                                <img src="https://down-id.img.susercontent.com/file/id-11134207-7rasf-m1oepluk54fld2@resize_w450_nl.webp" 
+                                     alt="Medali Emas" 
+                                     class="w-full h-full object-cover">
                             </div>
-                            <div class="bg-white bg-opacity-20 rounded-lg p-2 text-center">
-                                <div class="text-2xl font-bold" id="hours">15</div>
-                                <div class="text-sm">Jam</div>
-                            </div>
-                            <div class="bg-white bg-opacity-20 rounded-lg p-2 text-center">
-                                <div class="text-2xl font-bold" id="minutes">45</div>
-                                <div class="text-sm">Menit</div>
-                            </div>
-                            <div class="bg-white bg-opacity-20 rounded-lg p-2 text-center">
-                                <div class="text-2xl font-bold" id="seconds">30</div>
-                                <div class="text-sm">Detik</div>
-                            </div>
-                        </div>
-                        <p class="text-sm opacity-80">*Penawaran berakhir setelah countdown selesai</p>
+                            <span class="text-white font-medium">Emas</span>
+                        </button>
                     </div>
                     
-                    <div class="price-card md:w-3/5 p-8">
-                        <h2 class="text-3xl font-poppins font-bold text-gray-800 mb-6">Dapatkan Medali Eksklusif</h2>
-                        
-                        <div class="mb-6">
-                            <div class="flex items-baseline">
-                                <span class="text-4xl font-bold text-amber-500">Rp150.000</span>
-                                <span class="text-xl text-gray-500 line-through ml-4">Rp225.000</span>
+                    <!-- Silver -->
+                    <div class="text-center">
+                        <button onclick="showLargeImage('https://down-id.img.susercontent.com/file/id-11134207-7rasa-m1oepluk6j015d@resize_w450_nl.webp')" class="cursor-pointer">
+                            <div class="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-gray-300 glow-effect mx-auto mb-2">
+                                <img src="https://down-id.img.susercontent.com/file/id-11134207-7rasa-m1oepluk6j015d@resize_w450_nl.webp" 
+                                     alt="Medali Silver" 
+                                     class="w-full h-full object-cover">
                             </div>
-                            <p class="text-green-600 font-medium mt-2">Hemat Rp75.000 (33%)</p>
-                        </div>
-                        
-                        <ul class="mb-8 space-y-2">
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                <span>Gratis pengiriman ke seluruh Indonesia</span>
+                            <span class="text-white font-medium">Silver</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Bronze -->
+                    <div class="text-center">
+                        <button onclick="showLargeImage('https://down-id.img.susercontent.com/file/id-11134207-7ras9-m1oepluk7xkhac@resize_w450_nl.webp')" class="cursor-pointer">
+                            <div class="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-amber-700 glow-effect mx-auto mb-2">
+                                <img src="https://down-id.img.susercontent.com/file/id-11134207-7ras9-m1oepluk7xkhac@resize_w450_nl.webp" 
+                                     alt="Medali Perunggu" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <span class="text-white font-medium">Perunggu</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Order Section -->
+    <section id="order" class="py-16 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold title-font text-white mb-4">
+                    <span class="text-red-500">Pesan Sekarang</span>
+                </h2>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                    Dapatkan medali penghargaan HUT RI ke-80 dengan harga spesial
+                </p>
+            </div>
+            
+            <div class="bg-gray-800 rounded-xl p-6 md:p-8 max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-4">Detail Produk</h3>
+                        <ul class="space-y-3 text-gray-400">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Bahan: Paduan Seng Berkualitas</span>
                             </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                <span>Garansi 100% uang kembali jika tidak puas</span>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Ukuran: Diameter 5 cm, Tali 40 cm</span>
                             </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                <span>Stok terbatas, pesan sekarang juga!</span>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Warna: Emas, Silver, Perunggu</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Desain: Nasionalis (Merah Putih)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span>Kemasan: Kotak Eksklusif</span>
                             </li>
                         </ul>
                         
-                        <a href="#order" class="block w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-8 rounded-full text-lg text-center shadow-lg transform transition duration-300 hover:scale-105">
-                            PESAN SEKARANG
+                        <div class="mt-8">
+                            <div class="flex items-center mb-4">
+                                <span class="text-3xl font-bold text-gold-500" style="color: var(--gold-accent);">Rp150.000</span>
+                                <span class="price-strike ml-4 text-xl text-gray-400">Rp225.000</span>
+                            </div>
+                            <p class="text-green-400 mb-2">
+                                <i class="fas fa-truck"></i> Gratis Ongkir Jabodetabek
+                            </p>
+                            <p class="text-green-400">
+                                <i class="fas fa-clock"></i> Siap Kirim dalam 1-2 Hari
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-4">Form Pemesanan</h3>
+                        <!-- OrderOnline Embed Code -->
+                        <div class="ooef">
+                            <form class="orderonline-embed-form" data-username="mila" data-product-slug="medali-penghargaan" data-product-id="687bc9c500f9d6ebaa01202f" id="oo-embed-form-medali-penghargaan-279" data-origin="orderonline">
+                                <div class="ooef-loader"><style>.ooef-loader{visibility: hidden;opacity: 0;position: absolute;left: 0;right: 0;top: 0;bottom: 0;display: flex;justify-content: center;align-items: center;flex-direction: column;animation: ooLoadingIn 10s ease;-webkit-animation: ooLoadingIn 10s ease;animation-fill-mode: forwards;overflow: hidden}@keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}@-webkit-keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}.ooef-loader>div,.ooef-loader>div:after{border-radius: 50%;width: 2.5rem;height: 2.5rem}.ooef-loader>div{font-size: 10px;position: relative;text-indent: -9999em;border: .25rem solid #f5f5f5;border-left: .25rem solid #55c4cf;-webkit-transform: translateZ(0);-ms-transform: translateZ(0);transform: translateZ(0);-webkit-animation: ooLoading 1.1s infinite linear;animation: ooLoading 1.1s infinite linear}.ooef-loader.error>div{border-left: .25rem solid #ff4500;animation-duration: 5s}@-webkit-keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}@keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}</style><div aria-live="polite" role="status"><div>Loading...</div></div></div>
+                            </form>
+                        </div>
+                        <script>
+                            if (typeof xLogError != 'function') {
+                                var xLogError = function (error) {
+                                    var req = new XMLHttpRequest();
+                                    var payload = JSON.stringify({
+                                        url: document.location.href,
+                                        line: error.line,
+                                        stack: error.stack
+                                    });
+                                    var params = 'message=' + encodeURIComponent(error.name) + '&payload=' + encodeURIComponent(payload) + '&type=embed&level=error';
+                                    req.open('POST', 'https://api.orderonline.id/log', true);
+                                    req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                                    req.send(params);
+                                };
+                            }
+                            try {
+                                if (typeof xEmbedScript != 'function') {
+                                    var xEmbedScript = function () {
+                                        !function(w, d, e, v, id, t, s) {
+                                            if (d.getElementById(id)) return;
+                                            t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                                            s = d.getElementsByTagName(e)[0];
+                                            s.parentNode.insertBefore(t, s);
+                                        }(window, document, 'script', 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.4', 'oo-embed-js');
+                                    };
+                                }
+                                if (typeof xEmbedInit != 'function') {
+                                    var xEmbedInit = function (w, n) {
+                                        if (w.ooe) return;
+                                        n = w.ooe = function() {
+                                            n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                                        };
+                                        if (!w._ooe) w._ooe = n;
+                                        n.push = n;n.loaded = !0;n.version = '8.0.4';n.queue = [];
+                                    };
+                                }
+                                xEmbedInit(window);
+                                ooe('setup', 'redirect', 'https://mila.orderonline.id');
+                                ooe('init', '5f1a7b8fa9bf807da24d83bb', '687bc9c500f9d6ebaa01202f', '687bc9c500f9d6ebaa012030', 'oo-embed-form-medali-penghargaan-279', {"mode":"page","action":"Klik untuk pemesanan","title":"Form Pemesanan","triggerPixel":true,"triggerGtm":false});
+                                if (!window.jQuery) {
+                                    !function(w, d, e, v, id, t, s) {
+                                        if (d.getElementById(id)) return;
+                                        t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                                        t.addEventListener('load', xEmbedScript);
+                                        s = d.getElementsByTagName(e)[0];
+                                        s.parentNode.insertBefore(t, s);
+                                    }(window, document, 'script', 'https://cdn.orderonline.id/js/vendor/jquery.min.js', 'oo-embed-jquery');
+                                } else {
+                                    xEmbedScript();
+                                }
+                            } catch (e) {
+                                xLogError(e);
+                                throw e;
+                            }
+                        </script>
+                        <!-- End OrderOnline Embed Code -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial Section -->
+            <div class="mt-16">
+                <h2 class="text-3xl md:text-4xl font-bold title-font text-white mb-8 text-center">
+                    Apa Kata <span class="text-red-500">Mereka?</span>
+                </h2>
+                
+                <div class="carousel flex overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 gap-4" id="testimonial-carousel">
+                    <!-- Testimonial 1 -->
+                    <div class="carousel-item flex-shrink-0 w-full md:w-1/2 px-2">
+                        <div class="bg-gray-800 rounded-xl p-6">
+                            <div class="flex items-start mb-4">
+                                <img src="https://i.pinimg.com/736x/20/30/4f/20304f4fd391a1c0b03f022e7fb38814.jpg" 
+                                     alt="Vina M." 
+                                     class="w-12 h-12 rounded-full object-cover mr-4">
+                                <div>
+                                    <h4 class="font-bold text-white">Vina M.</h4>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 mb-4">"Bahan terbuat dari besi, <span class="text-yellow-400">cukup berat dan mewah.</span>"</p>
+                            <img src="https://down-id.img.susercontent.com/file/id-11134103-7r992-lxthwnfcu2jf9f.webp" 
+                                 alt="Review Vina M." 
+                                 class="w-24 h-24 object-cover rounded cursor-pointer" 
+                                 onclick="showLargeImage('https://down-id.img.susercontent.com/file/id-11134103-7r992-lxthwnfcu2jf9f.webp')">
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="carousel-item flex-shrink-0 w-full md:w-1/2 px-2">
+                        <div class="bg-gray-800 rounded-xl p-6">
+                            <div class="flex items-start mb-4">
+                                <img src="https://i.pinimg.com/736x/74/8f/a4/748fa464d3cfe601e451dd7109f3ebb6.jpg" 
+                                     alt="Lestari F." 
+                                     class="w-12 h-12 rounded-full object-cover mr-4">
+                                <div>
+                                    <h4 class="font-bold text-white">Lestari F.</h4>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 mb-4">"<span class="text-yellow-400">Sesuai kualitas</span> 🔥"</p>
+                            <img src="https://down-id.img.susercontent.com/file/id-11134103-7rash-m34z927now644c.webp" 
+                                 alt="Review Lestari F." 
+                                 class="w-24 h-24 object-cover rounded cursor-pointer" 
+                                 onclick="showLargeImage('https://down-id.img.susercontent.com/file/id-11134103-7rash-m34z927now644c.webp')">
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="carousel-item flex-shrink-0 w-full md:w-1/2 px-2">
+                        <div class="bg-gray-800 rounded-xl p-6">
+                            <div class="flex items-start mb-4">
+                                <img src="https://i.pinimg.com/736x/e1/d7/30/e1d73095cf4dadb5f0259e6c979c3bd0.jpg" 
+                                     alt="Desi H." 
+                                     class="w-12 h-12 rounded-full object-cover mr-4">
+                                <div>
+                                    <h4 class="font-bold text-white">Desi H.</h4>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 mb-4">"<span class="text-yellow-400">Kualitas produknya bagus</span> dan worth it."</p>
+                            <img src="https://down-id.img.susercontent.com/file/id-11134103-7rasj-m3q5cvl21yhgfa.webp" 
+                                 alt="Review Desi H." 
+                                 class="w-24 h-24 object-cover rounded cursor-pointer" 
+                                 onclick="showLargeImage('https://down-id.img.susercontent.com/file/id-11134103-7rasj-m3q5cvl21yhgfa.webp')">
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 4 -->
+                    <div class="carousel-item flex-shrink-0 w-full md:w-1/2 px-2">
+                        <div class="bg-gray-800 rounded-xl p-6">
+                            <div class="flex items-start mb-4">
+                                <img src="https://i.pinimg.com/1200x/e6/70/06/e670069e73af5ca6f3728ad30227b183.jpg" 
+                                     alt="Intan Z." 
+                                     class="w-12 h-12 rounded-full object-cover mr-4">
+                                <div>
+                                    <h4 class="font-bold text-white">Intan Z.</h4>
+                                    <div class="flex text-yellow-400">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 mb-4">"Gak expect <span class="text-yellow-400">sebagus ini</span> sih. Bakal repurchase. Thanks, seller!"</p>
+                            <img src="https://down-id.img.susercontent.com/file/id-11134103-7qul7-lj7zyf1npxk106.webp" 
+                                 alt="Review Intan Z." 
+                                 class="w-24 h-24 object-cover rounded cursor-pointer" 
+                                 onclick="showLargeImage('https://down-id.img.susercontent.com/file/id-11134103-7qul7-lj7zyf1npxk106.webp')">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center mt-4">
+                    <button class="bg-gray-800 hover:bg-gray-700 text-white p-2 rounded-full mx-1" onclick="document.getElementById('testimonial-carousel').scrollBy({ left: -300, behavior: 'smooth' })">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="bg-gray-800 hover:bg-gray-700 text-white p-2 rounded-full mx-1" onclick="document.getElementById('testimonial-carousel').scrollBy({ left: 300, behavior: 'smooth' })">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="py-16 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold title-font text-white mb-4">
+                    Pertanyaan <span class="text-red-500">Umum</span>
+                </h2>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                    Temukan jawaban untuk pertanyaan yang sering diajukan
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ 1 -->
+                <div class="mb-4">
+                    <button class="faq-toggle w-full flex justify-between items-center bg-gray-900 hover:bg-gray-800 text-white px-6 py-4 rounded-lg transition duration-300">
+                        <span class="text-left font-medium">Berapa lama waktu pengiriman?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden bg-gray-800 px-6 py-4 rounded-b-lg">
+                        <p class="text-gray-400">
+                            Waktu pengiriman tergantung lokasi Anda. Untuk Jabodetabek biasanya 1-2 hari kerja, luar Jabodetabek 3-5 hari kerja. Kami akan memberikan nomor resi setelah paket dikirim.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="mb-4">
+                    <button class="faq-toggle w-full flex justify-between items-center bg-gray-900 hover:bg-gray-800 text-white px-6 py-4 rounded-lg transition duration-300">
+                        <span class="text-left font-medium">Apakah bisa pesan dalam jumlah besar?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden bg-gray-800 px-6 py-4 rounded-b-lg">
+                        <p class="text-gray-400">
+                            Tentu bisa! Untuk pesanan lebih dari 50 medali, kami memberikan diskon khusus. Silakan hubungi kami melalui WhatsApp untuk negosiasi harga.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="mb-4">
+                    <button class="faq-toggle w-full flex justify-between items-center bg-gray-900 hover:bg-gray-800 text-white px-6 py-4 rounded-lg transition duration-300">
+                        <span class="text-left font-medium">Apakah bisa custom desain?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden bg-gray-800 px-6 py-4 rounded-b-lg">
+                        <p class="text-gray-400">
+                            Ya, kami menerima pesanan custom desain dengan minimal order 100 pcs. Biaya dan waktu produksi akan disesuaikan dengan kompleksitas desain yang diminta.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="mb-4">
+                    <button class="faq-toggle w-full flex justify-between items-center bg-gray-900 hover:bg-gray-800 text-white px-6 py-4 rounded-lg transition duration-300">
+                        <span class="text-left font-medium">Bagaimana cara perawatan medali?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden bg-gray-800 px-6 py-4 rounded-b-lg">
+                        <p class="text-gray-400">
+                            Medali terbuat dari bahan paduan seng yang tahan lama. Untuk menjaga kualitas, hindarkan dari air laut, bahan kimia, atau gesekan keras. Bersihkan dengan kain lembut jika kotor.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">MedaliRI80</h3>
+                    <p class="text-gray-400">
+                        Menyediakan medali penghargaan berkualitas untuk memeriahkan HUT RI ke-80 dengan desain nasionalis dan bahan premium.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Tautan Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white">Keunggulan</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-white">Galeri</a></li>
+                        <li><a href="#order" class="text-gray-400 hover:text-white">Pesan Sekarang</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Kontak Kami</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone-alt mr-2"></i> +62 812-3456-7890
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i> info@medaliri80.com
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Jakarta, Indonesia
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Follow Kami</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Form Order -->
-    <section id="order" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-poppins font-bold text-center text-gray-800 mb-6">
-                Pesan Medali Sekarang
-            </h2>
-            <p class="text-lg text-center text-gray-600 mb-16 max-w-2xl mx-auto">
-                Isi formulir di bawah ini untuk memesan medali penghargaan eksklusif Kemerdekaan ke-80. Stok terbatas!
-            </p>
             
-            <div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-xl p-6 md:p-8">
-                <!-- OrderOnline Embed Code -->
-                <div class="ooef">
-                    <form class="orderonline-embed-form" data-username="mila" data-product-slug="medali-penghargaan" data-product-id="687bc9c500f9d6ebaa01202f" id="oo-embed-form-medali-penghargaan-9660" data-origin="orderonline">
-                        <div class="ooef-loader"><style>.ooef-loader{visibility: hidden;opacity: 0;position: absolute;left: 0;right: 0;top: 0;bottom: 0;display: flex;justify-content: center;align-items: center;flex-direction: column;animation: ooLoadingIn 10s ease;-webkit-animation: ooLoadingIn 10s ease;animation-fill-mode: forwards;overflow: hidden}@keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}@-webkit-keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}.ooef-loader>div,.ooef-loader>div:after{border-radius: 50%;width: 2.5rem;height: 2.5rem}.ooef-loader>div{font-size: 10px;position: relative;text-indent: -9999em;border: .25rem solid #f5f5f5;border-left: .25rem solid #55c4cf;-webkit-transform: translateZ(0);-ms-transform: translateZ(0);transform: translateZ(0);-webkit-animation: ooLoading 1.1s infinite linear;animation: ooLoading 1.1s infinite linear}.ooef-loader.error>div{border-left: .25rem solid #ff4500;animation-duration: 5s}@-webkit-keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}@keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}</style><div aria-live="polite" role="status"><div>Loading...</div></div></div>
-                    </form>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">
+                    &copy; 2025 MedaliRI80. All rights reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-white text-sm">Kebijakan Privasi</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm">Syarat & Ketentuan</a>
                 </div>
-                <script>
-                    if (typeof xLogError != 'function') {
-                        var xLogError = function (error) {
-                            var req = new XMLHttpRequest();
-                            var payload = JSON.stringify({ url: document.location.href, line: error.line, stack: error.stack });
-                            var params = 'message=' + encodeURIComponent(error.name) + '&payload=' + encodeURIComponent(payload) + '&type=embed&level=error';
-                            req.open('POST', 'https://api.orderonline.id/log', true);
-                            req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-                            req.send(params);
-                        };
-                    }
-                    try {
-                        if (typeof xEmbedScript != 'function') {
-                            var xEmbedScript = function () {
-                                !function(w, d, e, v, id, t, s) {
-                                    if (d.getElementById(id)) return;
-                                    t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
-                                    s = d.getElementsByTagName(e)[0];
-                                    s.parentNode.insertBefore(t, s);
-                                }(window, document, 'script', 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.4', 'oo-embed-js');
-                            };
-                        }
-                        if (typeof xEmbedInit != 'function') {
-                            var xEmbedInit = function (w, n) {
-                                if (w.ooe) return;
-                                n = w.ooe = function() {
-                                    n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-                                };
-                                if (!w._ooe) w._ooe = n;
-                                n.push = n;n.loaded = !0;n.version = '8.0.4';n.queue = [];
-                            };
-                        }
-                        xEmbedInit(window);
-                        ooe('setup', 'redirect', 'https://mila.orderonline.id');
-                        ooe('init', '5f1a7b8fa9bf807da24d83bb', '687bc9c500f9d6ebaa01202f', '687bc9c500f9d6ebaa012030', 'oo-embed-form-medali-penghargaan-9660', {"mode":"page","action":"Klik untuk pemesanan","title":"Form Pemesanan","triggerPixel":true,"triggerGtm":true});
-                        if (!window.jQuery) {
-                            !function(w, d, e, v, id, t, s) {
-                                if (d.getElementById(id)) return;
-                                t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
-                                t.addEventListener('load', xEmbedScript);
-                                s = d.getElementsByTagName(e)[0];
-                                s.parentNode.insertBefore(t, s);
-                            }(window, document, 'script', 'https://cdn.orderonline.id/js/vendor/jquery.min.js', 'oo-embed-jquery');
-                        } else {
-                            xEmbedScript();
-                        }
-                    } catch (e) {
-                        xLogError(e);
-                        throw e;
-                    }
-                </script>
-                <!-- End OrderOnline Embed Code -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="text-center">
-                <h3 class="text-2xl font-poppins font-bold mb-4">Medali Penghargaan Kemerdekaan ke-80</h3>
-                <p class="max-w-2xl mx-auto mb-8">Memberikan apresiasi terbaik untuk para pemenang lomba Agustusan dengan medali eksklusif bernuansa nasionalis.</p>
-                
-                <div class="flex justify-center space-x-4 mb-8">
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-amber-500">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-amber-500">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-amber-500">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-amber-500">
-                        <i class="fab fa-tiktok"></i>
-                    </a>
-                </div>
-                
-                <p class="text-gray-400">© 2025 Medali Kemerdekaan. Hak Cipta Dilindungi.</p>
             </div>
         </div>
     </footer>
+    
+    <!-- Image Modal -->
+    <div id="image-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center hidden">
+        <div class="relative max-w-4xl w-full p-4">
+            <button onclick="closeModal()" class="absolute -top-12 right-0 text-white text-3xl hover:text-red-500">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="modal-image" src="" alt="" class="w-full h-auto rounded-lg">
+        </div>
+    </div>
 
     <script>
-        // Countdown Timer
-        const countDownDate = new Date("Aug 17, 2025 00:00:00").getTime();
-        
-        const countdown = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = countDownDate - now;
-            
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
-            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
-            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
-            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
-            
-            if (distance < 0) {
-                clearInterval(countdown);
-                document.getElementById("countdown").innerHTML = "PENAWARAN TELAH BERAKHIR";
+        // Image modal functions
+        function showLargeImage(src) {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-image');
+            modalImg.src = src;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('image-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside image
+        document.getElementById('image-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
             }
-        }, 1000);
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
         
-        // Carousel
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-item');
-        const dots = document.querySelectorAll('.carousel-dot');
-        const track = document.querySelector('.carousel-track');
+        // FAQ toggle
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('transform');
+                icon.classList.toggle('rotate-180');
+            });
+        });
         
-        function showSlide(index) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('bg-amber-500'));
+        // Carousel navigation
+        const carousel = document.getElementById('main-carousel');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        
+        prevBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: -carousel.offsetWidth / 2, behavior: 'smooth' });
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: carousel.offsetWidth / 2, behavior: 'smooth' });
+        });
+        
+        // Countdown timer
+        function updateCountdown() {
+            const now = new Date();
+            const targetDate = new Date();
+            targetDate.setDate(now.getDate() + 3); // 3 days from now
             
-            slides[index].classList.add('active');
-            dots[index].classList.add('bg-amber-500');
+            const diff = targetDate - now;
             
-            track.style.transform = `translateX(-${index * 100}%)`;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            
+            // Update countdown display
+            document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
+            
+            // Update mobile countdown
+            const mobileCountdown = document.getElementById('mobile-countdown');
+            mobileCountdown.innerHTML = `
+                <span class="bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm">${days}d</span>
+                <span class="bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm">${hours}h</span>
+                <span class="bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm">${minutes}m</span>
+            `;
         }
         
-        document.querySelector('.carousel-prev').addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Show sticky countdown on mobile when scrolling down
+        window.addEventListener('scroll', function() {
+            const stickyCountdown = document.getElementById('sticky-countdown');
+            if (window.innerWidth < 768 && window.scrollY > 300) {
+                stickyCountdown.classList.add('show');
+            } else {
+                stickyCountdown.classList.remove('show');
+            }
         });
         
-        document.querySelector('.carousel-next').addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        });
+        // Create confetti
+        function createConfetti() {
+            const colors = ['#ff0000', '#ffffff', '#ffd700'];
+            const container = document.getElementById('confetti-container');
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.width = Math.random() * 10 + 5 + 'px';
+                confetti.style.height = Math.random() * 10 + 5 + 'px';
+                confetti.style.animation = 'confetti-fall ' + (Math.random() * 5 + 3) + 's linear forwards';
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                
+                container.appendChild(confetti);
+                
+                // Remove confetti after animation
+                setTimeout(() => {
+                    confetti.remove();
+                }, 8000);
+            }
+        }
         
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentSlide = index;
-                showSlide(currentSlide);
+        // Create confetti periodically
+        setInterval(createConfetti, 3000);
+        createConfetti(); // Initial confetti
+
+        // Countdown timer function
+        function updateCountdown() {
+            const now = new Date();
+            const targetDate = new Date();
+            targetDate.setDate(now.getDate() + 3); // 3 days from now
+            
+            const diff = targetDate - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            // Update desktop countdown
+            flipCard('days', days);
+            flipCard('hours', hours);
+            flipCard('minutes', minutes);
+            flipCard('seconds', seconds);
+            
+            // Update mobile countdown
+            const mobileCountdown = document.getElementById('mobile-countdown');
+            mobileCountdown.innerHTML = `
+                <span class="bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm">${days}d</span>
+                <span class="bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm">${hours}h</span>
+                <span class="bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm">${minutes}m</span>
+            `;
+        }
+        
+        function flipCard(type, value) {
+            const front = document.getElementById(`${type}-front`);
+            const back = document.getElementById(`${type}-back`);
+            const card = document.getElementById(`${type}-flip`);
+            
+            if (front.textContent !== value.toString().padStart(2, '0')) {
+                back.textContent = value.toString().padStart(2, '0');
+                
+                card.classList.add('flip');
+                
+                setTimeout(() => {
+                    front.textContent = value.toString().padStart(2, '0');
+                    card.classList.remove('flip');
+                }, 600);
+            }
+        }
+        
+        // Start countdown
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+        
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
             });
-        });
+        }, observerOptions);
         
-        // Initialize carousel
-        showSlide(0);
-        
-        // Color variant selection
-        const variants = document.querySelectorAll('.color-variant');
-        variants.forEach(variant => {
-            variant.addEventListener('click', () => {
-                variants.forEach(v => v.classList.remove('active'));
-                variant.classList.add('active');
-            });
-        });
-        
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+        document.querySelectorAll('.slide-in-left, .slide-in-right, .zoom-in').forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>
